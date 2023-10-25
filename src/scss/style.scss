@@ -1,1 +1,99 @@
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+:root {
+  --foreground: #333;
+  --background: #eee;
+}
+
+.darkmode {
+  --foreground: #eee;
+  --background: #333;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.container {
+  
+  .theme-switcher-container {
+
+    #theme-switcher-label {
+      display: flex;
+      position: relative;
+      background: var(--foreground);
+      aspect-ratio: 2/1;
+      height: 2.5rem;
+      border-radius: 2.5rem;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        box-shadow: 0 0 0.75rem 0.1rem var(--foreground);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        height: 2.25rem;
+        width: 2.25rem;
+        border-radius: 50%;
+        background: var(--background);
+        box-shadow: 0 0 0.25rem 0.1rem var(--foreground) inset;
+        transition: 0.3s;
+      }
+
+      &:active::after {
+        width: 2.5rem;
+        height: 2rem;
+        top: 10%;
+      }
+    }
+
+    #theme-switcher-input {
+      display: none;
+    }
+
+    #theme-switcher-input:checked + #theme-switcher-label::after {
+      left: 95%;
+      transform: translateX(-100%);
+    }
+  }
+
+  .country-search-container {
+
+    .country-search-bar-container {
+
+      & > input {
+        background: var(--background);
+        color: var(--foreground);
+        outline: none;
+        border: 0.1rem solid var(--foreground);
+      }
+
+      & > button {
+        background: none;
+        outline: none;
+        border: none;
+        right: 0.5rem;
+        border-bottom: 0.15rem solid transparent;
+
+        &:hover {
+          border-color: var(--foreground);
+        }
+
+        & > svg {
+          width: 1.5rem;
+          transition: 0.075s;
+
+          & > path {
+            stroke: var(--foreground);
+          }
+        }
+      }
+    }
+  }
+}
