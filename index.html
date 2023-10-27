@@ -22,11 +22,12 @@
             class="country-search-bar-container w-100 position-relative d-flex align-items-center"
           >
             <input
+              id="country-search-input"
               class="w-100 py-2 px-5 rounded-4 fs-5"
               type="text"
               placeholder="Search for a country..."
             />
-            <button class="position-absolute">
+            <button id="country-search-submit" class="position-absolute">
               <svg
                 class="search-icon"
                 width="auto"
@@ -74,14 +75,18 @@
           </button>
           <ul
             id="select-region-list"
-            class="select-menu position-absolute w-100 list-unstyled px-5 py-2 pt-5 rounded-4 d-flex flex-column gap-2"
+            class="select-menu position-absolute w-100 list-unstyled px-5 py-2 pt-5 rounded-4 flex-column gap-2"
           >
-            <li class="select-menu-el">Azia</li>
+            <li class="select-menu-el">All</li>
+            <li class="select-menu-el">Asia</li>
             <li class="select-menu-el">Europe</li>
-            <li class="select-menu-el">America</li>
+            <li class="select-menu-el">Africa</li>
+            <li class="select-menu-el">Oceania</li>
+            <li class="select-menu-el">Americas</li>
           </ul>
         </div>
-        <div class="country-card-container"></div>
+
+        <div class="country-card-container card-group mt-3"></div>
       </div>
     </div>
     <script type="module" src="./src/ts/main.ts"></script>

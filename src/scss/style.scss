@@ -18,6 +18,7 @@ body {
 .container {
   
   .theme-switcher-container {
+    grid-area: theme-switcher;
 
     #theme-switcher-label {
       display: flex;
@@ -64,6 +65,7 @@ body {
   }
 
   .country-search-container {
+    grid-area: country-search;
 
     .country-search-bar-container {
 
@@ -98,6 +100,8 @@ body {
   }
 
   .region-container {
+    grid-area: region-container;
+    z-index: 5;
 
     .select-region {
       z-index: 10;
@@ -128,12 +132,11 @@ body {
     }
 
     .select-menu {
-      top: 0.3rem;
+      top: 0.35rem;
       background: var(--background);
       border: 0.1rem solid var(--foreground);
       transform: translateY(-0.3rem);
-      opacity: 0;
-      transition: 0.2s;
+      display: none;
 
       .select-menu-el-active {
         scale: 0.95;
@@ -160,8 +163,68 @@ body {
     }
 
     .select-menu-active {
-      opacity: 1;
-      transform: translateY(0);
+      display: flex;
+    }
+  }
+
+  .country-card-container {
+    grid-area: country-card-container;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .card {
+      background: var(--background);
+      color: var(--foreground);
+      border: 0.1rem solid var(--foreground);
+      border-radius: 1rem;
+      box-shadow: 0 0 1rem 0.1rem var(--foreground);
+
+      .card-img-top {
+        border-radius: 1rem 1rem 0 0;
+      }
+
+      .card-body {
+
+        .card-tiltle, .card-text {
+          color: var(--foreground);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 'country-search theme-switcher'
+                         'country-search region-container'
+                         'country-card-container country-card-container';
+
+    .theme-switcher-container {
+      transform: translateY(2rem);
+    }
+
+    .country-search-container {
+      max-width: 30rem;
+      justify-content: space-between;
+      gap: 2rem;
+
+    }
+
+    .region-container {
+      justify-self: end;
+      align-self: end;
+      width: 13rem;
+      height: 3rem;
+    }
+
+    .country-card-container {
+      grid-template-columns: repeat(4, 1fr);
+      row-gap: 2rem;
+      column-gap: 4rem;
+      transform: translateY(2rem);
     }
   }
 }
