@@ -24,7 +24,7 @@ body {
       position: relative;
       background: var(--foreground);
       aspect-ratio: 2/1;
-      height: 2.5rem;
+      height: 2rem;
       border-radius: 2.5rem;
       cursor: pointer;
       transition: 0.3s;
@@ -38,8 +38,8 @@ body {
         position: absolute;
         top: 5%;
         left: 5%;
-        height: 2.25rem;
-        width: 2.25rem;
+        height: 1.75rem;
+        width: 1.75rem;
         border-radius: 50%;
         background: var(--background);
         box-shadow: 0 0 0.25rem 0.1rem var(--foreground) inset;
@@ -94,6 +94,73 @@ body {
           }
         }
       }
+    }
+  }
+
+  .region-container {
+
+    .select-region {
+      z-index: 10;
+      background: var(--background);
+      outline: none;
+      border: 0.1rem solid var(--foreground);
+
+      .selected {
+        pointer-events: none;
+        color: var(--foreground);
+
+      }
+
+      .caret-active {
+        rotate: 180deg;
+      }
+
+      & > svg {
+        pointer-events: none;
+        right: 0.8rem;
+        height: 1.5rem;
+        width: 1.5rem;
+
+        & > path {
+          fill: var(--foreground);
+        }
+      }
+    }
+
+    .select-menu {
+      top: 0.3rem;
+      background: var(--background);
+      border: 0.1rem solid var(--foreground);
+      transform: translateY(-0.3rem);
+      opacity: 0;
+      transition: 0.2s;
+
+      .select-menu-el-active {
+        scale: 0.95;
+      }
+
+      .select-menu-el {
+        font-size: 1.1rem;
+        padding: 0.5rem 0;
+        transition: scale 0.1s;
+
+        &:not(:last-child) {
+          border-bottom: 0.1rem solid var(--foreground);
+        }
+
+        &:hover {
+          scale: 0.975;
+        }
+
+        &:active {
+          scale: 0.95;
+        }
+      }
+    }
+
+    .select-menu-active {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
