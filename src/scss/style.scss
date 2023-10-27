@@ -48,9 +48,9 @@ body {
       }
 
       &:active::after {
-        width: 2.5rem;
-        height: 2rem;
-        top: 10%;
+        width: 2rem;
+        height: 1.5rem;
+        top: 12.5%;
       }
     }
 
@@ -108,6 +108,11 @@ body {
       background: var(--background);
       outline: none;
       border: 0.1rem solid var(--foreground);
+      transition: box-shadow 0.3s;
+
+      &:hover {
+        box-shadow: 0 0 0.75rem 0.1rem var(--foreground);
+      }
 
       .selected {
         pointer-events: none;
