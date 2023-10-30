@@ -1,5 +1,5 @@
 Country List Webpage
-This project is a webpage designed to display a list of countries. The page features a clean design and utilizes SCSS (Sass) for styling and TypeScript (TS) for scripting, along with Bootstrap for responsive layout and components.
+This project is a webpage designed to display a list of countries. The page features a clean design and utilizes SCSS (Sass) for styling and TypeScript (TS) for scripting, along with Bootstrap for responsive layout and components. The project is set up to be run via npm and was developed using Vite for its build and development environment.
 
 Features
 Country List: Displays a comprehensive list of countries.
@@ -12,13 +12,14 @@ HTML: Markup language for structuring the webpage.
 SCSS (Sass): Preprocessor scripting language for more maintainable and structured CSS.
 Bootstrap: Front-end framework for responsiveness and design components.
 TypeScript (TS): Programming language providing static typing for a robust, maintainable codebase.
+Vite: A build tool that offers a fast development environment.
 Usage
 To access the webpage:
 
 Clone the repository.
-Compile SCSS files to CSS using a compatible compiler.
-Utilize a TypeScript compiler to transpile TS files to JavaScript.
-Open the index.html file in your preferred web browser.
+Install the project dependencies using npm: npm install.
+Run the project via Vite: npm run dev.
+Open the provided local server address in your preferred web browser.
 Implementation Details
 The page layout and structure are designed using HTML, styled with SCSS to enhance maintainability and organized styles. Bootstrap components are incorporated for design consistency and responsiveness. TypeScript is used to add interactivity such as search and filtering functionalities.
 
